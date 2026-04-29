@@ -1,17 +1,22 @@
 type StatCardProps = {
-    icon: string
-    value: string
-    label: string
+  icon: string
+  value: string
+  label: string
+  color?: 'orange' | 'yellow' | 'purple'
+}
+
+export function StatCard({ icon, value, label, color = 'orange' }: StatCardProps) {
+  const colors = {
+    orange: 'text-orange-500',
+    yellow: 'text-yellow-500',
+    purple: 'text-purple-500',
   }
-  
-  export function StatCard({ icon, value, label }: StatCardProps) {
-    return (
-      <div className="rounded-3xl bg-white p-5 text-center shadow-[0_6px_0_#D7E4EF] transition hover:-translate-y-1">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-50 text-3xl">
-          {icon}
-        </div>
-        <p className="mt-3 text-2xl font-black text-slate-800">{value}</p>
-        <p className="text-xs font-bold uppercase tracking-wide text-slate-400">{label}</p>
-      </div>
-    )
-  }
+
+  return (
+    <div className="rounded-2xl bg-white p-5 text-center shadow-[0_2px_0_#D8E0EA]">
+      <div className={`text-3xl ${colors[color]}`}>{icon}</div>
+      <p className="mt-2 text-2xl font-black text-slate-900">{value}</p>
+      <p className="text-xs font-medium text-slate-500">{label}</p>
+    </div>
+  )
+}
