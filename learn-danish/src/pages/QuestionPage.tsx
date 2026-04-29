@@ -15,8 +15,13 @@ export function QuestionPage() {
   const { id } = useParams({ from: '/lesson/$id' })
   const navigate = useNavigate()
 
-  const lesson = getLessonData(Number(id))
+  const currentLesson = getLessonData(Number(id))
 
+  if (!currentLesson) {
+    return <div className="p-6">Lesson not found</div>
+  }
+  
+  const lesson = currentLesson
   const [index, setIndex] = useState(0)
   const [status, setStatus] = useState<'correct' | 'wrong' | null>(null)
   const [done, setDone] = useState(false)
