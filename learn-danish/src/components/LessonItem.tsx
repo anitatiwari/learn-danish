@@ -52,7 +52,7 @@ export function LessonItem({
 
         <div>
           <p
-            className={`text-2xl font-black ${
+            className={`text-1xl font-black ${
               completed || active ? 'text-slate-900' : 'text-slate-400'
             }`}
           >
