@@ -9,16 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as Lesson2RouteImport } from './routes/lesson2'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LessonIdRouteImport } from './routes/lesson.$id'
 
-const Lesson2Route = Lesson2RouteImport.update({
-  id: '/lesson2',
-  path: '/lesson2',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
@@ -38,46 +32,35 @@ const LessonIdRoute = LessonIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
-  '/lesson2': typeof Lesson2Route
   '/lesson/$id': typeof LessonIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
-  '/lesson2': typeof Lesson2Route
   '/lesson/$id': typeof LessonIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
-  '/lesson2': typeof Lesson2Route
   '/lesson/$id': typeof LessonIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard' | '/lesson2' | '/lesson/$id'
+  fullPaths: '/' | '/dashboard' | '/lesson/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard' | '/lesson2' | '/lesson/$id'
-  id: '__root__' | '/' | '/dashboard' | '/lesson2' | '/lesson/$id'
+  to: '/' | '/dashboard' | '/lesson/$id'
+  id: '__root__' | '/' | '/dashboard' | '/lesson/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DashboardRoute: typeof DashboardRoute
-  Lesson2Route: typeof Lesson2Route
   LessonIdRoute: typeof LessonIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/lesson2': {
-      id: '/lesson2'
-      path: '/lesson2'
-      fullPath: '/lesson2'
-      preLoaderRoute: typeof Lesson2RouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
@@ -105,7 +88,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DashboardRoute: DashboardRoute,
-  Lesson2Route: Lesson2Route,
   LessonIdRoute: LessonIdRoute,
 }
 export const routeTree = rootRouteImport

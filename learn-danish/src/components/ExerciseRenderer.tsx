@@ -40,15 +40,7 @@ export function ExerciseRenderer({ exercise, onCorrect, onWrong }: Props) {
     )
   }
 
-  if (exercise.type === 'input') {
-    return (
-      <InputExercise
-        exercise={exercise}
-        onCorrect={onCorrect}
-        onWrong={onWrong}
-      />
-    )
-  }
+  
 
   return null
 }
