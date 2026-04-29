@@ -1,20 +1,28 @@
-export function Header() {
-    return (
-      <header className="mx-auto flex max-w-4xl items-center justify-between rounded-3xl bg-white px-6 py-5 shadow-[0_6px_0_#D7E4EF]">
-        <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#58CC02] text-2xl shadow-[0_4px_0_#2B7A0B]">
-            🇩🇰
-          </div>
-  
-          <div>
-            <p className="text-lg font-black">Hej, Guest 👋</p>
-            <p className="text-sm font-semibold text-slate-400">Level 1 learner</p>
-          </div>
+import { useNavigate } from '@tanstack/react-router'
+import { Trophy } from 'lucide-react'
+
+type HeaderProps = {
+  level: number
+}
+
+export function Header({ level }: HeaderProps) {
+  const navigate = useNavigate()
+
+  return (
+    <header className="border-b border-slate-200 bg-white">
+      <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
+        <div>
+          <p className="font-semibold text-slate-900">Hej, Guest! 👋</p>
+          <p className="text-sm text-slate-500">Level {level}</p>
         </div>
-  
-        <button className="rounded-2xl bg-[#FFF4D6] px-4 py-3 text-2xl shadow-[0_4px_0_#F4C542]">
-          🏆
+
+        <button
+          onClick={() => navigate({ to: '/dashboard' })}
+          className="rounded-2xl bg-blue-100 p-3 text-blue-600"
+        >
+          <Trophy className="size-6" />
         </button>
-      </header>
-    )
-  }
+      </div>
+    </header>
+  )
+}
