@@ -1,3 +1,23 @@
+export interface Exercise {
+  type: 'tap' | 'reorder' | 'fix'
+  question: string
+  grammarTip?: string
+  options?: string[]
+  correct?: string | string[]
+  words?: string[]
+  sentence?: string[]
+  mistakeIndex?: number
+  correctWord?: string
+  explanation: string
+}
+
+export interface Lesson {
+  id: number
+  title: string
+  xp: number
+  exercises: Exercise[]
+}
+
 export const lessons: Lesson[] = [
   {
     id: 5,
@@ -198,3 +218,7 @@ export const lessons: Lesson[] = [
     ],
   },
 ]
+
+export function getLessonData(lessonId: number): Lesson | null {
+  return lessons.find((lesson) => lesson.id === lessonId) || null
+}
