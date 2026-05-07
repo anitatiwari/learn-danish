@@ -119,7 +119,8 @@ export const lessons: Lesson[] = [
       {
         type: 'reorder',
         question: 'Byg sætningen korrekt',
-        correct: ['jeg', 'bussen', 'tager', 'hver dag'],
+        words: ['jeg', 'bussen', 'tager', 'hver dag'],
+        correct: ['jeg', 'tager', 'bussen', 'hver dag'],
         explanation: 'Rigtigt! Jeg tager bussen hver dag.',
       },
       {
