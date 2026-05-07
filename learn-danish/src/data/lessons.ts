@@ -20,7 +20,7 @@ export interface Lesson {
 
 export const lessons: Lesson[] = [
   {
-    id: 5,
+    id: 1,
     title: 'Hverdag & Tid',
     xp: 50,
     exercises: [
@@ -61,7 +61,7 @@ export const lessons: Lesson[] = [
   },
 
   {
-    id: 6,
+    id: 2,
     title: 'Mad & Restaurant',
     xp: 50,
     exercises: [
@@ -98,7 +98,7 @@ export const lessons: Lesson[] = [
   },
 
   {
-    id: 7,
+    id: 3,
     title: 'Transport & By',
     xp: 55,
     exercises: [
@@ -138,7 +138,7 @@ export const lessons: Lesson[] = [
   },
 
   {
-    id: 8,
+    id: 4,
     title: 'Modalverber & Planer',
     xp: 60,
     exercises: [
@@ -174,7 +174,7 @@ export const lessons: Lesson[] = [
   },
 
   {
-    id: 9,
+    id: 5,
     title: 'Sætninger & Struktur',
     xp: 65,
     exercises: [
