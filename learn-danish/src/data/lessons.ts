@@ -27,7 +27,7 @@ export const lessons: Lesson[] = [
       {
         type: 'tap',
         question: 'Jeg ______ kl. 7 hver dag',
-        options: ['står op', 'stå op', 'står oppe'],
+        options: ['stå op', 'står op', 'står oppe'],
         correct: 'står op',
         explanation: 'Korrekt! "står op" er nutid. (present tense)',
       },
@@ -42,9 +42,9 @@ export const lessons: Lesson[] = [
         type: 'tap',
         question: 'Vælg datid',
         options: [
-          'Jeg gik i skole i går',
           'Jeg går i skole i går',
           'Jeg gåede i skole i går',
+          'Jeg gik i skole i går',
         ],
         correct: 'Jeg gik i skole i går',
         explanation: 'Korrekt! "gik" er datid af "gå".',
@@ -68,7 +68,7 @@ export const lessons: Lesson[] = [
       {
         type: 'tap',
         question: 'Jeg ______ pizza i går',
-        options: ['spiste', 'spiser', 'spisede'],
+        options: ['spiser', 'spisede', 'spiste'],
         correct: 'spiste',
         explanation: 'Korrekt! Datid af "spise" er "spiste".',
       },
@@ -82,7 +82,7 @@ export const lessons: Lesson[] = [
       {
         type: 'tap',
         question: 'Vi ______ på restaurant i går',
-        options: ['var', 'er', 'været'],
+        options: ['er', 'været', 'var'],
         correct: 'var',
         explanation: 'Korrekt! Datid af "er" er "var".',
       },
@@ -105,22 +105,21 @@ export const lessons: Lesson[] = [
       {
         type: 'tap',
         question: 'Jeg tager ______ arbejde',
-        options: ['på', 'i', 'til'],
+        options: ['i', 'på', 'til'],
         correct: 'på',
         explanation: 'Korrekt! Man siger "på arbejde".',
       },
       {
         type: 'tap',
         question: 'Jeg bor ______ Danmark',
-        options: ['i', 'på', 'til'],
+        options: ['på', 'i', 'til'],
         correct: 'i',
         explanation: 'Korrekt! Man siger "i Danmark".',
       },
       {
         type: 'reorder',
         question: 'Byg sætningen korrekt',
-        words: ['jeg', 'tager', 'bussen', 'hver dag'],
-        correct: ['jeg', 'tager', 'bussen', 'hver dag'],
+        correct: ['jeg', 'bussen', 'tager', 'hver dag'],
         explanation: 'Rigtigt! Jeg tager bussen hver dag.',
       },
       {
@@ -145,28 +144,28 @@ export const lessons: Lesson[] = [
       {
         type: 'tap',
         question: 'Jeg ______ arbejde i morgen',
-        options: ['skal', 'skal at', 'skal til'],
+        options: ['skal at', 'skal til', 'skal'],
         correct: 'skal',
         explanation: 'Korrekt! Modalverber bruges uden "at".',
       },
       {
         type: 'tap',
         question: 'Jeg ______ gå i skole',
-        options: ['kan', 'kan at', 'kan til'],
+        options: ['kan at', 'kan', 'kan til'],
         correct: 'kan',
         explanation: 'Korrekt! "kan" bruges uden "at".',
       },
       {
         type: 'tap',
         question: 'Jeg arbejder ikke, ______ jeg er syg',
-        options: ['fordi', 'derfor', 'men'],
+        options: ['derfor','fordi', 'men'],
         correct: 'fordi',
         explanation: 'Korrekt! "fordi" viser årsag.',
       },
       {
         type: 'tap',
         question: 'Jeg er træt, ______ går jeg i seng',
-        options: ['derfor', 'fordi', 'men'],
+        options: [ 'fordi', 'derfor', 'men'],
         correct: 'derfor',
         explanation: 'Korrekt! "derfor" viser resultat.',
       },
@@ -182,8 +181,8 @@ export const lessons: Lesson[] = [
         type: 'tap',
         question: 'Start med “I dag”',
         options: [
-          'I dag arbejder jeg ikke',
           'I dag jeg arbejder ikke',
+          'I dag arbejder jeg ikke',
           'I dag ikke arbejder jeg'
         ],
         correct: 'I dag arbejder jeg ikke',
@@ -200,7 +199,7 @@ export const lessons: Lesson[] = [
       {
         type: 'tap',
         question: 'Jeg tror, ______ han kommer',
-        options: ['at', 'fordi', 'så'],
+        options: ['fordi', 'at', 'så'],
         correct: 'at',
         explanation: 'Korrekt! Man siger: Jeg tror, at han kommer.',
       },
@@ -208,8 +207,8 @@ export const lessons: Lesson[] = [
         type: 'tap',
         question: 'Hvilken er rigtig?',
         options: [
-          'Jeg tror, at han ikke kommer',
           'Jeg tror at han kommer ikke',
+          'Jeg tror, at han ikke kommer',
           'Jeg tror ikke at han kommer'
         ],
         correct: 'Jeg tror, at han ikke kommer',
