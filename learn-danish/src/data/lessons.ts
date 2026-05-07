@@ -1,134 +1,181 @@
-export interface Exercise {
-  type: 'tap' | 'reorder' | 'fix'
-  question: string
-  grammarTip?: string
-  options?: string[]
-  correct?: string | string[]
-  words?: string[]
-  sentence?: string[]
-  mistakeIndex?: number
-  correctWord?: string
-  explanation: string
-}
-
-export interface Lesson {
-  id: number
-  title: string
-  xp: number
-  exercises: Exercise[]
-}
-
 export const lessons: Lesson[] = [
   {
-    id: 1,
-    title: 'Nutid & Ordstilling',
-    xp: 40,
-    exercises: [
-      {
-        type: 'fix',
-        question: 'Find fejlen: Jeg ikke arbejder i dag',
-        sentence: ['Jeg', 'ikke', 'arbejder', 'i', 'dag'],
-        mistakeIndex: 1,
-        correctWord: 'arbejder',
-        explanation: '"ikke" står forkert. Korrekt: Jeg arbejder ikke i dag.',
-      },
-      {
-        type: 'reorder',
-        question: 'Byg sætningen korrekt',
-        words: ['jeg', 'arbejder', 'ikke', 'i dag'],
-        correct: ['jeg', 'arbejder', 'ikke', 'i dag'],
-        explanation: 'Rigtigt! Verbet kommer før "ikke": Jeg arbejder ikke i dag.',
-      },
-      {
-        type: 'tap',
-        question: 'Vælg korrekt spørgsmål: Du arbejder i dag',
-        options: ['Arbejder du i dag?', 'Du arbejder i dag?', 'Arbejder i dag du?'],
-        correct: 'Arbejder du i dag?',
-        explanation: 'Korrekt! I spørgsmål kommer verbet først: Arbejder du i dag?',
-      },
-      {
-        type: 'tap',
-        question: 'Hvilken sætning er rigtig?',
-        options: ['Jeg arbejder ikke i dag', 'Jeg ikke arbejder i dag', 'Jeg arbejder i dag ikke'],
-        correct: 'Jeg arbejder ikke i dag',
-        explanation: 'Korrekt! "ikke" kommer efter verbet i hovedsætninger.',
-      },
-      {
-        type: 'fix',
-        question: 'Find fejlen: Jeg bor på Danmark',
-        sentence: ['Jeg', 'bor', 'på', 'Danmark'],
-        mistakeIndex: 2,
-        correctWord: 'i',
-        explanation: 'Man siger "i Danmark", ikke "på Danmark".',
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: 'Modalverber & Negation',
+    id: 5,
+    title: 'Hverdag & Tid',
     xp: 50,
     exercises: [
       {
         type: 'tap',
-        question: 'Jeg ______ arbejde i morgen',
-        options: ['kan', 'kan at', 'kan til'],
-        correct: 'kan',
-        explanation: 'Korrekt! Modalverber bruges uden "at": Jeg kan arbejde.',
-      },
-      {
-        type: 'fix',
-        question: 'Find fejlen: Jeg kan at arbejde',
-        sentence: ['Jeg', 'kan', 'at', 'arbejde'],
-        mistakeIndex: 2,
-        correctWord: '',
-        explanation: '"at" skal fjernes. Korrekt: Jeg kan arbejde.',
-      },
-      {
-        type: 'tap',
-        question: 'Kombinér korrekt: Jeg er syg. Jeg arbejder ikke',
-        options: [
-          'Jeg arbejder ikke, fordi jeg er syg',
-          'Jeg arbejder ikke fordi er jeg syg',
-          'Jeg fordi er syg arbejder ikke',
-        ],
-        correct: 'Jeg arbejder ikke, fordi jeg er syg',
-        explanation: 'Korrekt! "fordi" forklarer årsagen.',
-      },
-      {
-        type: 'tap',
-        question: 'Vælg datid: Jeg arbejder i dag',
-        options: ['Jeg arbejdede i dag', 'Jeg arbejderede i dag', 'Jeg arbejder i går'],
-        correct: 'Jeg arbejdede i dag',
-        explanation: 'Korrekt! Datid af "arbejder" er "arbejdede".',
+        question: 'Jeg ______ kl. 7 hver dag',
+        options: ['står op', 'stå op', 'står oppe'],
+        correct: 'står op',
+        explanation: 'Korrekt! "står op" er nutid. (present tense)',
       },
       {
         type: 'reorder',
         question: 'Byg sætningen korrekt',
-        words: ['jeg', 'var', 'hjemme', 'i går'],
-        correct: ['jeg', 'var', 'hjemme', 'i går'],
-        explanation: 'Rigtigt! Jeg var hjemme i går.',
+        words: ['jeg', 'går', 'på arbejde', 'hver dag'],
+        correct: ['jeg', 'går', 'på arbejde', 'hver dag'],
+        explanation: 'Rigtigt! Jeg går på arbejde hver dag.',
+      },
+      {
+        type: 'tap',
+        question: 'Vælg datid',
+        options: [
+          'Jeg gik i skole i går',
+          'Jeg går i skole i går',
+          'Jeg gåede i skole i går',
+        ],
+        correct: 'Jeg gik i skole i går',
+        explanation: 'Korrekt! "gik" er datid af "gå".',
+      },
+      {
+        type: 'fix',
+        question: 'Find fejlen: Jeg går i går i skole',
+        sentence: ['Jeg', 'går', 'i går', 'i skole'],
+        mistakeIndex: 1,
+        correctWord: 'gik',
+        explanation: 'Datid skal bruges: Jeg gik i skole i går.',
       },
     ],
   },
+
   {
-    id: 3,
-    title: 'Datid & Struktur',
+    id: 6,
+    title: 'Mad & Restaurant',
+    xp: 50,
+    exercises: [
+      {
+        type: 'tap',
+        question: 'Jeg ______ pizza i går',
+        options: ['spiste', 'spiser', 'spisede'],
+        correct: 'spiste',
+        explanation: 'Korrekt! Datid af "spise" er "spiste".',
+      },
+      {
+        type: 'tap',
+        question: 'Maden var ______',
+        options: ['kold', 'kolde', 'koldt'],
+        correct: 'kold',
+        explanation: 'Korrekt! "maden" er fælleskøn.',
+      },
+      {
+        type: 'tap',
+        question: 'Vi ______ på restaurant i går',
+        options: ['var', 'er', 'været'],
+        correct: 'var',
+        explanation: 'Korrekt! Datid af "er" er "var".',
+      },
+      {
+        type: 'fix',
+        question: 'Find fejlen: Jeg var på restaurant i går og maden dårlig',
+        sentence: ['Jeg', 'var', 'på', 'restaurant', 'i går', 'og', 'maden', 'dårlig'],
+        mistakeIndex: 7,
+        correctWord: 'var dårlig',
+        explanation: 'Der mangler "var": maden var dårlig.',
+      },
+    ],
+  },
+
+  {
+    id: 7,
+    title: 'Transport & By',
+    xp: 55,
+    exercises: [
+      {
+        type: 'tap',
+        question: 'Jeg tager ______ arbejde',
+        options: ['på', 'i', 'til'],
+        correct: 'på',
+        explanation: 'Korrekt! Man siger "på arbejde".',
+      },
+      {
+        type: 'tap',
+        question: 'Jeg bor ______ Danmark',
+        options: ['i', 'på', 'til'],
+        correct: 'i',
+        explanation: 'Korrekt! Man siger "i Danmark".',
+      },
+      {
+        type: 'reorder',
+        question: 'Byg sætningen korrekt',
+        words: ['jeg', 'tager', 'bussen', 'hver dag'],
+        correct: ['jeg', 'tager', 'bussen', 'hver dag'],
+        explanation: 'Rigtigt! Jeg tager bussen hver dag.',
+      },
+      {
+        type: 'tap',
+        question: 'Vælg korrekt spørgsmål',
+        options: [
+          'Tager du bussen hver dag?',
+          'Du tager bussen hver dag?',
+          'Tager bussen du hver dag?'
+        ],
+        correct: 'Tager du bussen hver dag?',
+        explanation: 'Korrekt! Verbet kommer først i spørgsmål.',
+      },
+    ],
+  },
+
+  {
+    id: 8,
+    title: 'Modalverber & Planer',
     xp: 60,
     exercises: [
       {
         type: 'tap',
+        question: 'Jeg ______ arbejde i morgen',
+        options: ['skal', 'skal at', 'skal til'],
+        correct: 'skal',
+        explanation: 'Korrekt! Modalverber bruges uden "at".',
+      },
+      {
+        type: 'tap',
+        question: 'Jeg ______ gå i skole',
+        options: ['kan', 'kan at', 'kan til'],
+        correct: 'kan',
+        explanation: 'Korrekt! "kan" bruges uden "at".',
+      },
+      {
+        type: 'tap',
+        question: 'Jeg arbejder ikke, ______ jeg er syg',
+        options: ['fordi', 'derfor', 'men'],
+        correct: 'fordi',
+        explanation: 'Korrekt! "fordi" viser årsag.',
+      },
+      {
+        type: 'tap',
+        question: 'Jeg er træt, ______ går jeg i seng',
+        options: ['derfor', 'fordi', 'men'],
+        correct: 'derfor',
+        explanation: 'Korrekt! "derfor" viser resultat.',
+      },
+    ],
+  },
+
+  {
+    id: 9,
+    title: 'Sætninger & Struktur',
+    xp: 65,
+    exercises: [
+      {
+        type: 'tap',
         question: 'Start med “I dag”',
-        options: ['I dag arbejder jeg ikke', 'I dag jeg arbejder ikke', 'I dag ikke arbejder jeg'],
+        options: [
+          'I dag arbejder jeg ikke',
+          'I dag jeg arbejder ikke',
+          'I dag ikke arbejder jeg'
+        ],
         correct: 'I dag arbejder jeg ikke',
-        explanation: 'Korrekt! Efter "I dag" kommer verbet: I dag arbejder jeg ikke.',
+        explanation: 'Korrekt! Verbet kommer efter "I dag".',
       },
       {
         type: 'fix',
-        question: 'Find fejlen: I dag jeg arbejder ikke',
-        sentence: ['I dag', 'jeg', 'arbejder', 'ikke'],
+        question: 'Find fejlen: I dag jeg går ikke i skole',
+        sentence: ['I dag', 'jeg', 'går', 'ikke', 'i', 'skole'],
         mistakeIndex: 1,
-        correctWord: 'arbejder',
-        explanation: 'Efter "I dag" skal verbet komme før subjektet.',
+        correctWord: 'går',
+        explanation: 'Verbet skal før subjekt: I dag går jeg ikke i skole.',
       },
       {
         type: 'tap',
@@ -141,79 +188,13 @@ export const lessons: Lesson[] = [
         type: 'tap',
         question: 'Hvilken er rigtig?',
         options: [
-          'Jeg tror at han kommer ikke',
           'Jeg tror, at han ikke kommer',
-          'Jeg tror ikke at han kommer',
+          'Jeg tror at han kommer ikke',
+          'Jeg tror ikke at han kommer'
         ],
         correct: 'Jeg tror, at han ikke kommer',
-        explanation: 'Korrekt! I ledsætninger kommer "ikke" før verbet.',
-      },
-      {
-        type: 'tap',
-        question: 'Kombinér korrekt: Jeg er træt. Jeg arbejder',
-        options: [
-          'Jeg arbejder, selvom jeg er træt',
-          'Jeg arbejder selvom er jeg træt',
-          'Selvom jeg er træt jeg arbejder',
-        ],
-        correct: 'Jeg arbejder, selvom jeg er træt',
-        explanation: 'Korrekt! "selvom" bruges til kontrast.',
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: 'Avanceret Grammatik',
-    xp: 70,
-    exercises: [
-      {
-        type: 'tap',
-        question: 'Jeg arbejder meget, ______ er jeg træt',
-        options: ['derfor', 'fordi', 'men'],
-        correct: 'derfor',
-        explanation: 'Korrekt! "derfor" viser konsekvens.',
-      },
-      {
-        type: 'fix',
-        question: 'Find fejlen: Jeg arbejder meget derfor jeg er træt',
-        sentence: ['Jeg', 'arbejder', 'meget', 'derfor', 'jeg', 'er', 'træt'],
-        mistakeIndex: 3,
-        correctWord: ', derfor',
-        explanation: 'Der mangler korrekt struktur: Jeg arbejder meget, derfor er jeg træt.',
-      },
-      {
-        type: 'tap',
-        question: '“Jeg er træt, fordi jeg arbejder meget” betyder:',
-        options: ['Årsag', 'Konsekvens', 'Spørgsmål'],
-        correct: 'Årsag',
-        explanation: 'Korrekt! "fordi" forklarer årsagen.',
-      },
-      {
-        type: 'tap',
-        question: 'Hvilken er rigtig?',
-        options: [
-          'Selvom jeg er træt, arbejder jeg',
-          'Selvom jeg er træt arbejder jeg ikke',
-          'Selvom jeg er træt jeg arbejder',
-        ],
-        correct: 'Selvom jeg er træt, arbejder jeg',
-        explanation: 'Korrekt! Efter ledsætningen kommer verbet før subjektet.',
-      },
-      {
-        type: 'tap',
-        question: 'Kombinér korrekt: Jeg har travlt. Jeg kommer senere',
-        options: [
-          'Jeg kommer senere, fordi jeg har travlt',
-          'Jeg kommer senere derfor jeg har travlt',
-          'Jeg derfor kommer senere har travlt',
-        ],
-        correct: 'Jeg kommer senere, fordi jeg har travlt',
-        explanation: 'Korrekt! "fordi" forklarer årsagen.',
+        explanation: 'Korrekt! "ikke" før verbet i ledsætning.',
       },
     ],
   },
 ]
-
-export function getLessonData(lessonId: number): Lesson | null {
-  return lessons.find((lesson) => lesson.id === lessonId) || null
-}

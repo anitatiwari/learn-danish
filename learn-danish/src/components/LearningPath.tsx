@@ -23,7 +23,7 @@ export function LearningPath({ unlockedLessons }: LearningPathProps) {
       <div className="space-y-5">
         <LessonItem
           number={1}
-          title="Nutid & Ordstilling"
+          title="Hverdag og tid"
           xp={50}
           completed={completedLessons.includes(1)}
           active={unlockedLessons >= 1}
@@ -31,7 +31,7 @@ export function LearningPath({ unlockedLessons }: LearningPathProps) {
 
         <LessonItem
           number={2}
-          title="Modalverber & Negation"
+          title="Mad og restaurant"
           xp={50}
           completed={completedLessons.includes(2)}
           active={unlockedLessons >= 2}
@@ -39,7 +39,7 @@ export function LearningPath({ unlockedLessons }: LearningPathProps) {
 
         <LessonItem
           number={3}
-          title="Datid (Past Tense)"
+          title="Transport og by"
           xp={55}
           completed={completedLessons.includes(3)}
           active={unlockedLessons >= 3}
@@ -47,7 +47,7 @@ export function LearningPath({ unlockedLessons }: LearningPathProps) {
 
         <LessonItem
           number={4}
-          title="Ledsætninger"
+          title="Planer og modalverber"
           xp={60}
           completed={completedLessons.includes(4)}
           active={unlockedLessons >= 4}
@@ -55,7 +55,7 @@ export function LearningPath({ unlockedLessons }: LearningPathProps) {
 
         <LessonItem
           number={5}
-          title="Avanceret Grammatik"
+          title="Sætninger og ordstilling"
           xp={65}
           completed={completedLessons.includes(5)}
           active={unlockedLessons >= 5}
