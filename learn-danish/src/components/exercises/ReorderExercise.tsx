@@ -21,8 +21,8 @@ export function ReorderExercise({ exercise, onCorrect, onWrong }: Props) {
       : String(exercise.correct).split(' ')
 
     const isCorrect =
-      JSON.stringify(items.map((item) => item.toLowerCase())) ===
-      JSON.stringify(correctItems.map((item) => item.toLowerCase()))
+    JSON.stringify(items.map((item: string) => item.toLowerCase())) ===
+    JSON.stringify(correctItems.map((item: string) => item.toLowerCase()))
 
     setTimeout(() => {
       if (isCorrect) {
